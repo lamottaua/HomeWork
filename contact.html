@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact</title>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+
+        input[type=number] {
+            -moz-appearance:textfield; /* Firefox */
+        }
+    </style>
+    <script>
+        document.addEventListener('submit',(event)=>{
+            event.preventDefault()
+            event.target.reset()
+            alert("SUCCESS")
+            return false
+        })
+    </script>
+</head>
+
+<body>
+Contact
+<form action="#">
+
+    <input type="text" placeholder="Name" pattern="A-zA-Z">
+    <input type="number" placeholder="Phone" pattern="[0-9]" required>
+
+   <button type="submit">Send</button>
+
+<!-- -->
+</form>
+</body>
+</html>
